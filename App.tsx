@@ -1,11 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Form from './components/Form';
 
 export default function App() {
+  const handleFormSubmit = (formData: any) => {
+    // console.log('Form data submitted:', formData);
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Form onFormSubmit={handleFormSubmit} showUsername={true} showEmail={true} showPassword={true} showConfirmPassword={true} />
     </View>
   );
 }
@@ -13,7 +17,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
   },
